@@ -1,0 +1,43 @@
+---
+title: "curso_r_quarto"
+format: html
+editor: visual
+bibliography: references.bib
+---
+
+```{r}
+nadadeiras <- penguins|>
+  mutate(tamanho_nadadeira =
+            if_else(flipper_length_mm> 200, "longa", "curta"))|>
+filter(is.na(tamanho_nadadeira))|>
+  summarise(media_bico = mean(bill_length_mm),
+            desv_pad_bico=sd(bill_length_mm),
+            .by=tamanho_nadadeira)
+nadadeiras
+```
+
+```{r}
+library(tidyverse)
+bivar <- read.csv("bivariate.csv")
+```
+
+```{r}
+#|echo: false
+mean(bivar$x)
+```
+
+```{r}
+
+```
+
+![](images/POL.png)
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+|      |      |      |
+|      |      |      |
+|      |      |      |
+
+#\| eval: false #calcula 1+1\
+
+@tzfira2002
